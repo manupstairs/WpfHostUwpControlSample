@@ -26,10 +26,7 @@
         </SplitView.Pane>
 
         <Grid>
-            <TextBlock Text="Content"
-                   FontSize="24"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"/>
+            <local:StandardUI></local:StandardUI>
         </Grid>
     </SplitView>
 </UserControl>
