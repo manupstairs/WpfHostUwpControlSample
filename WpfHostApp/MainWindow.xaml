@@ -8,6 +8,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <xaml:WindowsXamlHost InitialTypeName="UWPClassLibrary.MyUserControl1" ChildChanged="WindowsXamlHost_ChildChanged" />
+        <xaml:WindowsXamlHost InitialTypeName="UWPClassLibrary.StandardUI"  />
     </Grid>
 </Window>
