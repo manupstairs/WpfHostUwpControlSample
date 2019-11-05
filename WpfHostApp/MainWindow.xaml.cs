@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UWPClassLibrary;
+using Windows.UI.Xaml.Controls;
 
 namespace WpfHostApp
 {
@@ -47,5 +50,28 @@ namespace WpfHostApp
                 return "Binding from WPF to UWP XAML";
             }
         }
+
+        private void WindowsXamlHost_ChildChanged_1(object sender, EventArgs e)
+        {
+            global::Microsoft.Toolkit.Wpf.UI.XamlHost.WindowsXamlHost windowsXamlHost =
+                sender as global::Microsoft.Toolkit.Wpf.UI.XamlHost.WindowsXamlHost;
+            global::UWPClassLibrary.SplitViewDemo userControl =
+                windowsXamlHost.GetUwpInternalObject() as global::UWPClassLibrary.SplitViewDemo;
+
+            if (userControl != null)
+            {
+                userControl.IconList = new ObservableCollection<NavItem>
+            {
+                new NavItem { Symbol= Symbol.Save},
+                new NavItem { Symbol= Symbol.Scan},
+                new NavItem { Symbol= Symbol.Share},
+                new NavItem { Symbol= Symbol.Stop},
+                new NavItem { Symbol= Symbol.Video},
+                new NavItem { Symbol= Symbol.Volume},
+            };
+            }
+        }
     }
+
+    
 }

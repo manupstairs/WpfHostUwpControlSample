@@ -8,6 +8,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <xaml:WindowsXamlHost InitialTypeName="UWPClassLibrary.StandardUI"  />
+        <xaml:WindowsXamlHost InitialTypeName="UWPClassLibrary.SplitViewDemo"  ChildChanged="WindowsXamlHost_ChildChanged_1" />
     </Grid>
 </Window>
